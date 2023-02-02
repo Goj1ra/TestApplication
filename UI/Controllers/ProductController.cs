@@ -18,18 +18,6 @@ namespace UI.Controllers
             _productService = productService;
         }
 
-        [HttpPost("CreateProduct")]
-        public string ProductCreation([FromBody]ProductCreationViewModel productCreationViewModel)
-        {
-            var product = ApiMapper.Mapper.Map<ProductModel>(productCreationViewModel);
-            var result = _productService.CreateProduct(product);
-            if(result != null)
-            {
-                return result;
-            }
-            return "Bad Request!";
-        }
-
         [HttpGet("GetProducts")]
         public ICollection<dynamic> GetProducts()
         {

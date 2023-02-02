@@ -11,9 +11,6 @@ namespace BLL.Mapper.Profiles
             CreateMap<Product, ProductModel>()
                 .ReverseMap();
 
-            CreateMap<Category, CategoryModel>()
-                .ReverseMap();
-
             CreateMap<User, UserModel>()
                 .ReverseMap();
         }

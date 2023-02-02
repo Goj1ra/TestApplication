@@ -3,6 +3,6 @@ namespace DAL.Entities.Base
 {
     public abstract class Entity : EntityBase<int>
     {
-        public override int Id { get; protected set; }
+        public override int Id { get; set; }
     }
 }

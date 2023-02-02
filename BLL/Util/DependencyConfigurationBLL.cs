@@ -13,7 +13,6 @@ namespace BLL.Util
         {
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IProductService, ProductService>();
-            services.AddTransient<ICategoryService, CategoryService>();
             services.AddAutoMapper(typeof(EntityToBusinessModelMapperProfile));
         }
     }

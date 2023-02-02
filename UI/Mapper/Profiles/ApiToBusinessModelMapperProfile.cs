@@ -12,8 +12,6 @@ namespace UI.Mapper.Profiles
                 .ReverseMap();
             CreateMap<UserModel, LoginViewModel>()
                 .ReverseMap();
-            CreateMap<CategoryModel, CategoryCreationViewModel>()
-                .ReverseMap();
             CreateMap<ProductModel, ProductCreationViewModel>()
                 .ReverseMap();
         }

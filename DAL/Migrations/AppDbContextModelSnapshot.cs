@@ -42,6 +42,26 @@ namespace DAL.Migrations
                     b.HasIndex("ParentCategoryId");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Clothes",
+                            ParentCategoryId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Shoes",
+                            ParentCategoryId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Hats",
+                            ParentCategoryId = 1
+                        });
                 });
 
             modelBuilder.Entity("DAL.Models.Product", b =>
@@ -81,6 +101,48 @@ namespace DAL.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 1,
+                            CreateDateTime = new DateTime(2023, 2, 2, 12, 14, 13, 730, DateTimeKind.Local).AddTicks(6584),
+                            Description = "New jeans from the famous brand",
+                            Name = "Jeans",
+                            Price = 15m,
+                            UserId = "8e445865-a24d-4543-a6c6-9443d048cdb9"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryId = 2,
+                            CreateDateTime = new DateTime(2023, 2, 2, 12, 14, 13, 730, DateTimeKind.Local).AddTicks(6600),
+                            Description = "Nike boots signed by CR7",
+                            Name = "Boots",
+                            Price = 100m,
+                            UserId = "8e445865-a24d-4543-a6c6-9443d048cdb9"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryId = 3,
+                            CreateDateTime = new DateTime(2023, 2, 2, 12, 14, 13, 730, DateTimeKind.Local).AddTicks(6604),
+                            Description = "New Cap",
+                            Name = "Cap",
+                            Price = 20m,
+                            UserId = "8e445865-a24d-4543-a6c6-9443d048cdb9"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryId = 1,
+                            CreateDateTime = new DateTime(2023, 2, 2, 12, 14, 13, 730, DateTimeKind.Local).AddTicks(6608),
+                            Description = "Well worn trousers",
+                            Name = "Trousers",
+                            Price = 10m,
+                            UserId = "8e445865-a24d-4543-a6c6-9443d048cdb9"
+                        });
                 });
 
             modelBuilder.Entity("DAL.Models.User", b =>
@@ -158,6 +220,25 @@ namespace DAL.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "8e445865-a24d-4543-a6c6-9443d048cdb9",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "dff4f692-4fd7-4c0c-9368-28667008e854",
+                            Email = "artem_2003@mail.ru",
+                            EmailConfirmed = false,
+                            FirstName = "Artem",
+                            LastName = "Star",
+                            LockoutEnabled = true,
+                            Password = "Artem@2002",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJ6q5jOia+BLCjYcd4D/rJUU4aLe2v+j+NxtDAaWPP9JKXaFKk/39KDAXMQjNpiIVQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "0a6e4348-5f3c-41b4-8e19-6472773f79b1",
+                            TwoFactorEnabled = false,
+                            UserName = "No_Mercy"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

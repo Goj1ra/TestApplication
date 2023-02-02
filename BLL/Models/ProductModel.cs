@@ -13,8 +13,6 @@ namespace BLL.Models
         public decimal Price { get; set; }
         public DateTime CreateDateTime { get; set; }
         public string CategoryName { get; set; }
-        public string CategoryId { get; set; }
-        public CategoryModel Category { get; set; }
         public string UserId { get; set; }
         public User User { get; set; }
     }
