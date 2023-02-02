@@ -19,19 +19,6 @@ namespace BLL.Services.Implementations
             _appDbContext = context;
             _unitofWork = unitOfWork;
         }
-
-        public string CreateProduct(ProductModel productModel)
-        {
-            var product = ApplicationMapper.Mapper.Map<Product>(productModel);
-            product.Category.Name = productModel.CategoryName;
-            var category = ApplicationMapper.Mapper.Map<Category>(productModel.Category);
-            product.UserId = UserModel.CurrentUser.Id;
-            _unitofWork.Products.Save(product);
-            _unitofWork.Categories.Save(category);
-            _unitofWork.Save();
-            return "Product is created!";
-        }
-
         public ICollection<dynamic> GetProductsByCategory()
         {
             using (var context = _appDbContext)

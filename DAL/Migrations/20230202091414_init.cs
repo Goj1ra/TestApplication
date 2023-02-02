@@ -204,6 +204,44 @@ namespace DAL.Migrations
                         principalColumn: "Id");
                 });
 
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "Password", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "8e445865-a24d-4543-a6c6-9443d048cdb9", 0, "dff4f692-4fd7-4c0c-9368-28667008e854", "artem_2003@mail.ru", false, "Artem", "Star", true, null, null, null, "Artem@2002", "AQAAAAEAACcQAAAAEJ6q5jOia+BLCjYcd4D/rJUU4aLe2v+j+NxtDAaWPP9JKXaFKk/39KDAXMQjNpiIVQ==", null, false, "0a6e4348-5f3c-41b4-8e19-6472773f79b1", false, "No_Mercy" });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Name", "ParentCategoryId" },
+                values: new object[] { 1, "Clothes", 1 });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Name", "ParentCategoryId" },
+                values: new object[,]
+                {
+                    { 2, "Shoes", 1 },
+                    { 3, "Hats", 1 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "CreateDateTime", "Description", "Name", "Price", "UserId" },
+                values: new object[,]
+                {
+                    { 1, 1, new DateTime(2023, 2, 2, 12, 14, 13, 730, DateTimeKind.Local).AddTicks(6584), "New jeans from the famous brand", "Jeans", 15m, "8e445865-a24d-4543-a6c6-9443d048cdb9" },
+                    { 4, 1, new DateTime(2023, 2, 2, 12, 14, 13, 730, DateTimeKind.Local).AddTicks(6608), "Well worn trousers", "Trousers", 10m, "8e445865-a24d-4543-a6c6-9443d048cdb9" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "CreateDateTime", "Description", "Name", "Price", "UserId" },
+                values: new object[] { 2, 2, new DateTime(2023, 2, 2, 12, 14, 13, 730, DateTimeKind.Local).AddTicks(6600), "Nike boots signed by CR7", "Boots", 100m, "8e445865-a24d-4543-a6c6-9443d048cdb9" });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "CreateDateTime", "Description", "Name", "Price", "UserId" },
+                values: new object[] { 3, 3, new DateTime(2023, 2, 2, 12, 14, 13, 730, DateTimeKind.Local).AddTicks(6604), "New Cap", "Cap", 20m, "8e445865-a24d-4543-a6c6-9443d048cdb9" });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",

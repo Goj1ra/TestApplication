@@ -26,6 +26,7 @@ namespace DAL.Context
             modelBuilder.Entity<User>(ConfigureUser);
             modelBuilder.Entity<Category>();
             base.OnModelCreating(modelBuilder);
+            new DbInitializer(modelBuilder).Seed();
         }
 
         private void ConfigureUser(EntityTypeBuilder<User> builder)
